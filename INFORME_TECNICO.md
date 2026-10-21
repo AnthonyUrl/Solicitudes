@@ -24,7 +24,8 @@
 | **Nombre del proyecto** | Sistema de Solicitudes — QA Automatizado (`sistema-solicitudes-qa`) |
 | **Propósito** | Aplicación web que registra solicitudes de financiamiento, valida los datos mediante una regla de negocio y muestra el listado de solicitudes aceptadas. |
 | **Origen** | Proyecto propio de código abierto, creado para esta práctica y liberado bajo licencia **MIT**. Se optó por un proyecto propio en lugar de uno de terceros para garantizar el acceso completo al código fuente, evitar dependencias externas y disponer de total control sobre la regla de negocio a automatizar. |
-| **Repositorio / ruta local** | `sistema-solicitudes-qa/` (incluido en el ZIP de entrega) |
+| **Repositorio** | <https://github.com/AnthonyUrl/Solicitudes.git> (rama `main`) |
+| **Ruta local** | `sistema-solicitudes-qa/` (incluido en el ZIP de entrega) |
 | **Tecnología** | Java 17+ (compilado con JDK 24.0.1), servidor HTTP embebido del JDK (`com.sun.net.httpserver`), sin framework web de terceros. |
 | **Gestor de dependencias y construcción** | Maven (JUnit Jupiter 5.10.2, Selenium WebDriver 4.25.0). |
 | **Cómo se inicia** | `mvn clean package -DskipTests` y luego `java -jar target/sistema-solicitudes-qa.jar` (puerto por defecto 8080). |
