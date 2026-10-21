@@ -18,7 +18,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.release>17</maven.compiler.release>
     <junit.version>5.10.2</junit.version>
-    <selenium.version>4.25.0</selenium.version>
+    <selenium.version>4.51.0</selenium.version>
     <!-- Directorio de reportes Surefire. Se parametriza para que Jenkins pueda separar
          los reportes de la suite unitaria y de la suite Selenium en carpetas distintas. -->
     <surefire.reports.dir>surefire-reports</surefire.reports.dir>
