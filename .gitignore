@@ -1,0 +1,26 @@
+# Salidas de Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# Capturas generadas por las pruebas Selenium (evidencia local)
+target/screenshots/
+
+# Entornos de desarrollo
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

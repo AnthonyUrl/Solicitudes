@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.utesa.calidad</groupId>
+  <artifactId>sistema-solicitudes-qa</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>Sistema de Solicitudes - QA Automatizado</name>
+  <description>Aplicacion web Java sencilla usada como proyecto base para la practica de QA
+    automatizado con Selenium WebDriver, JUnit Jupiter y Jenkins Pipeline.</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+    <junit.version>5.10.2</junit.version>
+    <selenium.version>4.25.0</selenium.version>
+    <!-- Directorio de reportes Surefire. Se parametriza para que Jenkins pueda separar
+         los reportes de la suite unitaria y de la suite Selenium en carpetas distintas. -->
+    <surefire.reports.dir>surefire-reports</surefire.reports.dir>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>sistema-solicitudes-qa</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <reportsDirectory>${project.build.directory}/${surefire.reports.dir}</reportsDirectory>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.utesa.calidad.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <mainClass>com.utesa.calidad.App</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
